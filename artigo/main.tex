@@ -1,0 +1,102 @@
+\documentclass[article,a4paper,12pt,oneside,english,brazilian,sumario=tradicional]{abntex2}
+
+
+\autor{João Pedro Augusto da Silva}
+\titulo{Título do artigo}
+\local{Brasil}
+\data{2026}
+
+% ---
+% Pacotes fundamentais
+% ---
+\usepackage{lmodern}			% Usa a fonte Latin Modern
+\usepackage[T1]{fontenc}		% Selecao de codigos de fonte.
+\usepackage[utf8]{inputenc}		% Codificacao do documento (conversão automática dos acentos)
+\usepackage{indentfirst}		% Indenta o primeiro parágrafo de cada seção.
+\usepackage{nomencl} 			% Lista de simbolos
+\usepackage{color}				% Controle das cores
+\usepackage{graphicx}			% Inclusão de gráficos
+\usepackage{microtype} 			% para melhorias de justificação
+		
+% ---
+% Pacotes de citações
+% ---
+\usepackage[brazilian,hyperpageref]{backref}	 % Paginas com as citações na bibl
+\usepackage[alf]{abntex2cite}	% Citações padrão ABNT
+
+% ---
+% Pacotes diversos
+% ---
+\usepackage{lipsum}
+
+\makeindex
+
+\setlrmarginsandblock{3cm}{3cm}{*}
+\setulmarginsandblock{3cm}{3cm}{*}
+\checkandfixthelayout
+
+% ---
+% Espaçamentos entre linhas e parágrafos
+% ---
+
+% O tamanho do parágrafo é dado por:
+\setlength{\parindent}{1.3cm}
+
+% Controle do espaçamento entre um parágrafo e outro:
+\setlength{\parskip}{0.2cm}  % tente também \onelineskip
+
+% Espaçamento simples
+\SingleSpacing
+
+% ---
+% Documento
+% ---
+\begin{document}
+
+\selectlanguage{brazilian}
+\frenchspacing 
+
+\maketitle
+
+\begin{resumoumacoluna}
+    \lipsum[1]
+
+    \vspace{\onelineskip}
+
+    \noindent
+    \textbf{Palavras-chave}: artigo. laTeX. neovim.
+\end{resumoumacoluna}
+
+% \renewcommand{\resumoname}{Abstract}
+% \begin{resumoumacoluna}
+%     \begin{otherlanguage*}{english}
+%         \lipsum[1]
+%
+%         \vspace{\onelineskip}
+%
+%         \noindent
+%         \textbf{Keywords}: trees. performance. assyntotic analysis. data structures.
+%     \end{otherlanguage*}  
+% \end{resumoumacoluna}
+
+\begin{center}
+    \smaller
+    \textbf{Data de submissão e aprovação}: elemento obrigatório. Indicar dia, mês e ano
+
+    \textbf{Identificação e disponibilidade}: elemento opcional. Pode ser indicado 
+    o endereço eletrônico, DOI, suportes e outras informações relativas ao acesso.
+\end{center}
+
+\textual
+
+\input{textuais/introducao}
+
+\input{textuais/desenvolvimento}
+
+\input{textuais/consideracoes_finais}
+
+\postextual
+
+\bibliography{bibliografia/bibliografia}
+
+\end{document}
